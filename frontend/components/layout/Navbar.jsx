@@ -15,6 +15,8 @@ import {
   Sparkles,
 } from "lucide-react";
 
+
+
 const navLinks = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/practice", label: "Practice", icon: Target },
@@ -26,6 +28,8 @@ const navLinks = [
 export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+
+  const [showNotifications, setShowNotifications] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -91,7 +95,7 @@ export default function Navbar() {
         </div>
 
         {/* Right Side */}
-        <div className="flex items-center gap-3">
+        <div className="relative flex items-center gap-3">
           <Link href="/analyzer">
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -106,11 +110,48 @@ export default function Navbar() {
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
+             onClick={() => setShowNotifications(!showNotifications)}
             className="relative p-2 text-zinc-400 hover:text-white transition-colors"
           >
             <Bell size={20} />
             <span className="absolute top-1 right-1 w-2 h-2 bg-cyan-400 rounded-full" />
           </motion.button>
+
+          {showNotifications && (
+  <motion.div
+    initial={{ opacity: 0, y: -10 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -10 }}
+    className="absolute top-14 right-16 w-80 bg-zinc-900 border border-zinc-700 rounded-xl shadow-2xl p-4 z-50"
+  >
+    <h3 className="text-white font-semibold mb-3">
+      Notifications
+    </h3>
+
+    <div className="space-y-3">
+      <div className="p-3 rounded-lg bg-zinc-800">
+        <p className="text-sm text-white">
+          🎉 Welcome to OmniCode!
+        </p>
+      </div>
+
+      <div className="p-3 rounded-lg bg-zinc-800">
+        <p className="text-sm text-white">
+          ⚡ New coding challenge available.
+        </p>
+      </div>
+
+      <div className="p-3 rounded-lg bg-zinc-800">
+        <p className="text-sm text-white">
+          🏆 Your rank improved by 5 places.
+        </p>
+      </div>
+    </div>
+  </motion.div>
+)}
+
+
+
          <Link href="/profile">
           <motion.div
             whileHover={{ scale: 1.05 }}
