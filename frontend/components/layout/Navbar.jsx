@@ -111,13 +111,13 @@ export default function Navbar() {
             <Bell size={20} />
             <span className="absolute top-1 right-1 w-2 h-2 bg-cyan-400 rounded-full" />
           </motion.button>
-
+         <Link href="/profile">
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-black font-bold text-sm cursor-pointer"
           >
             A
-          </motion.div>
+          </motion.div></Link>
         </div>
       </div>
     </motion.nav>
