@@ -1,6 +1,7 @@
 // FILE: components/landing/HeroSection.jsx
 "use client";
 
+
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Play, Zap, Users, Timer } from "lucide-react";
@@ -31,6 +32,7 @@ function TypewriterCode() {
 
 function FloatingChip({ children, className, delay = 0 }) {
   return (
+
     <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -44,7 +46,9 @@ function FloatingChip({ children, className, delay = 0 }) {
 
 export default function HeroSection() {
   return (
+
     <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
+
       {/* Radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -174,7 +178,7 @@ export default function HeroSection() {
               >
                 Run Code
               </motion.button>
-              <div className="flex gap-1.5">
+              <div className="flex gap-2">
                 <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
                 <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
                 <div className="w-2.5 h-2.5 rounded-full bg-cyan-400" />
@@ -183,17 +187,17 @@ export default function HeroSection() {
           </div>
 
           {/* Floating Chips */}
-          <FloatingChip className="-top-4 -right-4" delay={1.2}>
-            <span className="flex items-center gap-1.5">
-              <Zap size={12} className="text-cyan-400" /> 1.2M Problems Solved
+          <FloatingChip className="-top-10 -right-4" delay={1.2}>
+            <span className="flex items-center gap-2">
+              <Zap size={10} className="text-cyan-400" /> 1.2M Problems Solved
             </span>
           </FloatingChip>
-          <FloatingChip className="-bottom-4 -left-4" delay={1.4}>
-            <span className="flex items-center gap-1.5">
+          <FloatingChip className="-bottom-12 left-3" delay={1.4}>
+            <span className="flex items-center gap-2">
               <Users size={12} className="text-cyan-400" /> 50K Active Users
             </span>
           </FloatingChip>
-          <FloatingChip className="top-1/2 -right-8" delay={1.6}>
+          <FloatingChip className="top-1/2 right-8 " delay={1.6}>
             <span className="flex items-center gap-1.5">
               <Timer size={12} className="text-cyan-400" /> 99ms Avg Execution
             </span>
