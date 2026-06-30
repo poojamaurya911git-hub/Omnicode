@@ -1,0 +1,19 @@
+{
+  "name": "omnicode-collab-engine",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OmniCode Collab Engine - Socket.io + Yjs + JDoodle",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "socket.io": "^4.8.1",
+    "yjs": "^13.6.20",
+    "redis": "^4.7.0",
+    "dotenv": "^16.4.7",
+    "cors": "^2.8.5"
+  }
+}

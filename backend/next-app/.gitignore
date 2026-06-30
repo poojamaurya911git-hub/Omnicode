@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Environment variables (NEVER commit real secrets)
+.env
+.env.local
+.env.*.local
+
+# Next.js build
+.next/
+
+# Debug
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
